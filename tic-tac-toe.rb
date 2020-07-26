@@ -95,8 +95,8 @@ class Player
     puts "#{@name}, place #{@mark}:"
     cell_placement = gets.chomp.to_i
 
-    until $cells[cell_placement - 1].to_i > 0
-      puts "Cell #{cell_placement} is taken. #{name}, place #{@mark}:"
+    until $cells[cell_placement - 1].to_i > 0 && cell_placement > 0 && cell_placement <= 9
+      puts "You can't do that! #{name}, place #{@mark}:"
       cell_placement = gets.chomp.to_i
     end
 
