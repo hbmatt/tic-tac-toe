@@ -97,7 +97,7 @@ class Player
 
     until $cells[cell_placement - 1].to_i > 0
       puts "Cell #{cell_placement} is taken. #{name}, place #{@mark}:"
-      cell_placement = gets.chomp
+      cell_placement = gets.chomp.to_i
     end
 
     @moves = @moves.push(cell_placement).sort
