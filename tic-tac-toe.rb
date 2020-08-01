@@ -56,7 +56,7 @@ class TicTacToe
   end
 
   def check_valid_move?(cell_placement)
-    @cells[cell_placement].to_i > 0 && cell_placement >= 0 && cell_placement <= 9
+    @cells[cell_placement].to_i > 0 && cell_placement >= 0 && cell_placement < 9
   end
 
   def show_move(cell_placement, mark)
@@ -65,7 +65,7 @@ class TicTacToe
 
   def winning_move?(moves)
     winning_cells = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 4], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
-    winning_cells.include?(moves)
+    winning_cells.any? { |set| set - moves == [] }
   end
 
   def check_win(player1, player2)
@@ -135,4 +135,4 @@ class Player
   end
 end
 
-TicTacToe.new.start_game
+
