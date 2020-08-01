@@ -135,4 +135,4 @@ class Player
   end
 end
 
-
+TicTacToe.new.start_game
